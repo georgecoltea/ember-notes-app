@@ -1,0 +1,36 @@
+<div class="card-border {{model.background}}">
+  {{#if model.image}}
+      <img src="{{model.image}}" crossorigin="anonymous" class="card-img-top" height="160">
+    {{/if}}
+  <div class="card-body">
+    {{#if isEditable}}
+    <h5 class="editable card-title" contenteditable=true>{{model.title}}</h5>
+    <p class="editable card-text" contenteditable=true>{{model.content}}</p>
+    <button type="button" class="btn btn-success" {{action 'editNote'}}>{{fa-icon "save"}}</button>
+    {{else}}
+    <h5 class="card-title" contenteditable=false>{{model.title}}</h5>
+    <p class="card-text" contenteditable=false>{{model.content}}</p>
+    {{!-- <button type="button" class="delete-button" {{action 'deleteNote'}}>{{fa-icon "trash"}}</button> --}}
+    <button type="button" class="delete-button" {{action 'openModal'}}>{{fa-icon "trash"}}</button>
+    <button type="button" class="edit-button" {{action 'enableEdit'}}>{{fa-icon "edit"}}</button>
+      {{#if model.isPinned}}
+        <button type="button" class="note-pinned" {{action 'pinPost'}}>{{fa-icon "map-pin"}}</button>
+      {{else}}
+        <button type="button" class="note-unpinned" {{action 'pinPost'}}>{{fa-icon "map-pin"}}</button>
+      {{/if}}
+      <button type="button" class="color-button" {{action 'enableColors'}}>{{fa-icon "tint"}}</button>
+      <div class="colors">
+        <div class="round red" {{action 'setNoteColor' 'red'}}></div>
+        <div class="round teal" {{action 'setNoteColor' 'teal'}}></div>
+        <div class="round orange" {{action 'setNoteColor' 'orange'}}></div>
+        <div class="round yellow" {{action 'setNoteColor' 'yellow'}}></div>
+        <div class="round blue" {{action 'setNoteColor' 'blue'}}></div>
+        <div class="round brown" {{action 'setNoteColor' 'brown'}}></div>
+      </div>
+    {{/if}}
+  </div>
+</div>
+
+
+
+

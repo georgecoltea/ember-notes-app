@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      {{#unless displayAddNoteContainer}}
+        <input class="form-control mb-3 mt-3" placeholder='Add a new note' {{action 'openAddNote'}} />
+      {{/unless}}
+
+      {{#if displayAddNoteContainer}}
+        <div class="input-group mb-3 mt-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Title</span>
+          </div>
+          {{input class="form-control" value=noteTitle}}
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Content</span>
+          </div>
+          {{textarea class="form-control" value=noteContent}}
+        </div>
+        <div class="input-group mb-3">
+          <input class="add-note-image-upload" accept="image/png,image/jpeg,application/pdf" type="file"/>
+        </div>
+
+        <p class="text-danger" id="add-note-error"></p>
+        <button class="btn btn-success" {{action "createNote"}}>Add note</button>
+        <button class="btn btn-warning" {{action "cancelNoteAdd"}}>Cancel</button>
+      {{/if}}
+    </div>
+  </div>
+</div>

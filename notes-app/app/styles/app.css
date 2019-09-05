@@ -1,0 +1,145 @@
+.card {
+  border: none;
+}
+
+.card-border {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+}
+
+.editable {
+  border-bottom: 1px solid;
+  padding-bottom: 3px;
+  outline: none;
+}
+
+.modal-position {
+  position: absolute;
+  top: 35%;
+  left: 39%;
+}
+
+.overlay {
+  width: 100%;
+  height: 140%;
+  position: absolute;
+  background: grey;
+  top: 0;
+  left: 0;
+  opacity: 0.95;
+  cursor: url(/assets/images/close.png), crosshair;
+}
+
+.card-columns {
+    column-count: 4;
+}
+
+#dumm {
+  display: none;
+}
+
+#pinned {
+  display: none;
+}
+
+.red {
+  background: #f28b82;
+}
+
+.teal {
+  background: #a7ffeb;
+}
+
+.orange {
+  background: #fbbc04;
+}
+
+.yellow {
+  background: #fff475;
+}
+
+.blue {
+  background: #aecbfa;
+}
+
+.brown {
+  background: #e6c9a8;
+}
+
+.round {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 2px;
+  display: inline-block;
+}
+
+.colors {
+  position: absolute;
+  bottom: 26px;
+  left: 10px;
+  background: #fff;
+  border: 1px solid #f2f3f4;
+  border-radius: 5px;
+  padding: 6px 5px 0;
+  display: none;
+  cursor: pointer;
+}
+
+.delete-button {
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 5px 10px;
+}
+
+.edit-button {
+  color: #000;
+  background: transparent;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: 25px;
+  bottom: 0;
+  padding: 3px 10px;
+}
+
+.note-pinned {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background: rgba(131, 92, 43, 0.7);
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.note-unpinned {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.color-button {
+  position: relative;
+  top: 19px;
+  outline: none;
+  left: 38px;
+  background: transparent;
+  color: #000;
+  border: none;
+}
+
+@media only screen and (max-width: 757px) {
+  .card-columns {
+    column-count: 2;
+  }
+}

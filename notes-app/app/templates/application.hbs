@@ -1,0 +1,12 @@
+<header class="header">
+  {{navbar-component 'navbar-component'}}
+</header>
+<div class="container">
+  {{create-note 'create-note' model=model}}
+  {{notes-component 'notes-component' model=model}}
+  {{outlet}}
+
+</div>
+
+<button {{action 'openModal' 'myModal'}}>Open modal</button>
+{{outlet 'modal'}}
