@@ -1,12 +1,12 @@
 <header class="header">
-  {{navbar-component 'navbar-component'}}
+  {{navbar-component}}
 </header>
 <div class="container">
-  {{create-note 'create-note' model=model}}
-  {{notes-component 'notes-component' model=model}}
+  {{create-note model=model}}
+  {{notes-component model=model}}
+  {{notes-done model=model}}
   {{outlet}}
-
 </div>
-
-<button {{action 'openModal' 'myModal'}}>Open modal</button>
-{{outlet 'modal'}}
+{{footer-component}}
+{{!-- <button {{action 'openModal' 'myModal'}}>Open modal</button>
+{{outlet 'modal'}} --}}

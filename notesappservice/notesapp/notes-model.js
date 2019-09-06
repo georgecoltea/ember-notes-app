@@ -5,7 +5,8 @@ var noteSchema = new mongoose.Schema({
     content: 'string',
     isPinned: Boolean,
     image: 'string',
-    background: 'string'
+    background: 'string',
+    isDone: Boolean
 },
 {
     versionKey: false // You should be aware of the outcome after set to false

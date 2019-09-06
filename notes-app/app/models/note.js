@@ -5,5 +5,6 @@ export default DS.Model.extend({
   content: DS.attr('string'),
   isPinned: DS.attr('boolean'),
   image: DS.attr('string'),
-  background: DS.attr('string')
+  background: DS.attr('string'),
+  isDone: DS.attr('boolean')
 });

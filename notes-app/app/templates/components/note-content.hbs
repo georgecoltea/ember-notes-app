@@ -1,4 +1,4 @@
-<div class="card-border {{model.background}}">
+<div class="card-border {{model.background}}" draggable="true">
   {{#if model.image}}
       <img src="{{model.image}}" crossorigin="anonymous" class="card-img-top" height="160">
     {{/if}}
@@ -11,7 +11,6 @@
     <h5 class="card-title" contenteditable=false>{{model.title}}</h5>
     <p class="card-text" contenteditable=false>{{model.content}}</p>
     {{!-- <button type="button" class="delete-button" {{action 'deleteNote'}}>{{fa-icon "trash"}}</button> --}}
-    <button type="button" class="delete-button" {{action 'openModal'}}>{{fa-icon "trash"}}</button>
     <button type="button" class="edit-button" {{action 'enableEdit'}}>{{fa-icon "edit"}}</button>
       {{#if model.isPinned}}
         <button type="button" class="note-pinned" {{action 'pinPost'}}>{{fa-icon "map-pin"}}</button>

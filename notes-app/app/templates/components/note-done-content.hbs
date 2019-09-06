@@ -1,0 +1,10 @@
+<div class="card-border {{model.background}}">
+  {{#if model.image}}
+      <img src="{{model.image}}" crossorigin="anonymous" class="card-img-top" height="160">
+  {{/if}}
+  <div class="card-body">
+    <h5 class="card-title" contenteditable=false>{{model.title}}</h5>
+    <p class="card-text" contenteditable=false>{{model.content}}</p>
+    <button type="button" class="delete-button" {{action 'deleteNote'}}>{{fa-icon "trash"}}</button>
+  </div>
+</div>

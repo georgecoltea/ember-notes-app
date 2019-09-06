@@ -5,10 +5,10 @@ export default Ember.Component.extend({
   classNames: ['card'],
   isEditable: false,
   actions: {
-    deleteNote() {
-      const model = this.get('model');
-      model.destroyRecord();
-    },
+    // deleteNote() {
+    //   const model = this.get('model');
+    //   model.destroyRecord();
+    // },
     editNote() {
       const contenteditable = this.element.querySelectorAll('[contenteditable]');
       const title = contenteditable[0].textContent;
@@ -48,22 +48,9 @@ export default Ember.Component.extend({
 
       const colorTab = this.element.getElementsByClassName('colors');
       colorTab[0].classList.remove('d-block');
-    },
-    // click: function() {
-    //   console.log('here');
-    //   this.sendAction('openModal', 'myModal');
-    // }
-    // openModal: function(modalName) {
-    //   return this.render(modalName, {
-    //     into: 'application',
-    //     outlet: 'modal'
-    //   });
-    // },
-    // closeModal: function() {
-    //   return this.disconnectOutlet({
-    //     outlet: 'modal',
-    //     parentView: 'application'
-    //   });
-    // }
+    }
+  },
+  dragStart: function(event) {
+    event.dataTransfer.setData('text/data', this.get('model.id'));
   }
 });

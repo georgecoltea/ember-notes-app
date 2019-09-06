@@ -11,7 +11,9 @@
     <div class="card-columns">
       {{#each model as |note|}}
         {{#if note.isPinned}}
-          {{note-content model=note}}
+          {{#unless note.isDone}}
+            {{note-content model=note}}
+          {{/unless}}
         {{/if}}
       {{/each}}
     </div>
@@ -23,7 +25,9 @@
     <div class="card-columns">
       {{#each model as |note|}}
         {{#unless note.isPinned}}
-          {{note-content model=note}}
+          {{#unless note.isDone}}
+            {{note-content model=note}}
+          {{/unless}}
         {{/unless}}
       {{/each}}
     </div>

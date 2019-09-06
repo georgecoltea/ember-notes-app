@@ -51,6 +51,7 @@ exports.update = function (req, res) {
         note.content = req.body.note.content;
         note.isPinned = req.body.note.isPinned;
         note.background = req.body.note.background;
+        note.isDone = req.body.note.isDone ? req.body.note.isDone : false;
       
         note.save(function (err) {
             if (err)
