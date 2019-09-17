@@ -120,11 +120,11 @@
 
 .note-unpinned {
   position: absolute;
-  top: 0px;
+  bottom: 0px;
   right: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: transparent;
   border: none;
-  color: #fff;
+  color: #000;
   padding: 5px 10px;
 }
 
@@ -136,6 +136,37 @@
   background: transparent;
   color: #000;
   border: none;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #000;
+  display: inline-block;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-bottom: 0;
+  border-radius: 5px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #f28b82;
+}
+
+.close-button-add-note {
+  position: absolute;
+  right: 0;
 }
 
 @media only screen and (max-width: 757px) {

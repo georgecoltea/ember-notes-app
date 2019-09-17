@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  errorMessage: '',
   store: Ember.inject.service(),
   displayAddNoteContainer: false,
   actions: {
@@ -25,9 +26,7 @@ export default Ember.Component.extend({
             });
 
             note.save().then(function () {
-              console.log('success');
             }).catch(function () {
-              console.log('error');
             });
           };
 
@@ -37,11 +36,11 @@ export default Ember.Component.extend({
 
           this.set('noteTitle', '');
           this.set('noteContent', '');
-          document.getElementById('add-note-error').innerText = ``;
+          this.set('errorMessage', '');
 
           this.set('displayAddNoteContainer', false);
         } else {
-          document.getElementById('add-note-error').innerText = `Don't be lazy!`;
+          this.set('errorMessage', `Don't be lazy!`);
           this.set('displayAddNoteContainer', true);
         }
 
@@ -61,11 +60,11 @@ export default Ember.Component.extend({
 
           this.set('noteTitle', '');
           this.set('noteContent', '');
-          document.getElementById('add-note-error').innerText = ``;
+          this.set('errorMessage', '');
 
           this.set('displayAddNoteContainer', false);
         } else {
-          document.getElementById('add-note-error').innerText = `Don't be lazy!`;
+          this.set('errorMessage', `Don't be lazy!`);
           this.set('displayAddNoteContainer', true);
         }
       }

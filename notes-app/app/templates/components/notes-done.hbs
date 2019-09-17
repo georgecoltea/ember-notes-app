@@ -1,14 +1,15 @@
-<div class="row">
-  <div class="col-lg-12 p-0 mt-3 mb-3">
-    <h3>Done</h3>
-    <small>Drag notes here to mark them as done</small>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 p-0 mt-3 mb-3">
+      <h3>Done</h3>
+      <small>Drag notes here to mark them as done</small>
+    </div>
+    <div class="card-columns">
+      {{#each model as |note|}}
+        {{#if note.isDone}}
+          {{note-done-content model=note}}
+        {{/if}}
+      {{/each}}
+    </div>
   </div>
-  <div class="card-columns">
-    {{#each model as |note|}}
-      {{#if note.isDone}}
-        {{note-done-content model=note}}
-      {{/if}}
-    {{/each}}
-  </div>
-
 </div>

@@ -7,24 +7,21 @@
 
       {{#if displayAddNoteContainer}}
         <div class="input-group mb-3 mt-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1">Title</span>
-          </div>
-          {{input class="form-control" value=noteTitle}}
+          {{input class="form-control" value=noteTitle placeholder='Title'}}
         </div>
         <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Content</span>
-          </div>
-          {{textarea class="form-control" value=noteContent}}
+          {{textarea class="form-control" value=noteContent placeholder='Description'}}
         </div>
         <div class="input-group mb-3">
-          <input class="add-note-image-upload" accept="image/png,image/jpeg,application/pdf" type="file"/>
+          <button class="btn btn-success mr-1" {{action "createNote"}}>{{fa-icon "check"}}</button>
+          {{!-- <input class="add-note-image-upload" accept="image/png,image/jpeg,application/pdf" type="file"/> --}}
+          <input class="add-note-image-upload inputfile" accept="image/png,image/jpeg,application/pdf" type="file"  id="file"/>
+          <label for="file">{{fa-icon "link"}}</label>
+          <button class="btn btn-warning close-button-add-note" {{action "cancelNoteAdd"}}>{{fa-icon "times"}}</button>
         </div>
+        <p class="text-danger">{{errorMessage}}</p>
 
-        <p class="text-danger" id="add-note-error"></p>
-        <button class="btn btn-success" {{action "createNote"}}>Add note</button>
-        <button class="btn btn-warning" {{action "cancelNoteAdd"}}>Cancel</button>
+
       {{/if}}
     </div>
   </div>

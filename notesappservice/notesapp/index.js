@@ -2,7 +2,7 @@ let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let app = express();
-let apiRoutes = require("./api-routes");
+let apiRoutes = require("./routes/api-routes");
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -26,8 +26,6 @@ app.use(function(req, res, next) {
   	res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
     next();
 });
-
-app.get('/', (req, res) => res.send('Hello World'));
 
 app.use('/api', apiRoutes);
 

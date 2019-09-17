@@ -10,6 +10,9 @@ Router.map(function() {
     this.route('note-content');
   });
   this.route('test');
+  this.route('register');
+  this.route('login');
+  this.route('notes');
 });
 
 export default Router;

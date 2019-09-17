@@ -5,10 +5,6 @@ export default Ember.Component.extend({
   classNames: ['card'],
   isEditable: false,
   actions: {
-    // deleteNote() {
-    //   const model = this.get('model');
-    //   model.destroyRecord();
-    // },
     editNote() {
       const contenteditable = this.element.querySelectorAll('[contenteditable]');
       const title = contenteditable[0].textContent;
