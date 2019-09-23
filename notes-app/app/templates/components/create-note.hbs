@@ -1,28 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 text-center">
-      {{#unless displayAddNoteContainer}}
-        <input class="form-control mb-3 mt-3" placeholder='Add a new note' {{action 'openAddNote'}} />
-      {{/unless}}
-
       {{#if displayAddNoteContainer}}
         <div class="input-group mb-3 mt-3">
           {{input class="form-control" value=noteTitle placeholder='Title'}}
         </div>
+
         <div class="input-group mb-3">
           {{textarea class="form-control" value=noteContent placeholder='Description'}}
         </div>
+
         <div class="input-group mb-3">
           <button class="btn btn-success mr-1" {{action "createNote"}}>{{fa-icon "check"}}</button>
-          {{!-- <input class="add-note-image-upload" accept="image/png,image/jpeg,application/pdf" type="file"/> --}}
           <input class="add-note-image-upload inputfile" accept="image/png,image/jpeg,application/pdf" type="file"  id="file"/>
           <label for="file">{{fa-icon "link"}}</label>
           <button class="btn btn-warning close-button-add-note" {{action "cancelNoteAdd"}}>{{fa-icon "times"}}</button>
         </div>
+
         <p class="text-danger">{{errorMessage}}</p>
 
-
       {{/if}}
+
+      {{#unless displayAddNoteContainer}}
+        <input class="form-control mb-3 mt-3" placeholder='Add a new note' {{action 'openAddNote'}} />
+      {{/unless}}
     </div>
   </div>
 </div>

@@ -28,11 +28,13 @@ export default Ember.Component.extend({
     },
     enableColors() {
       const colorTab = this.element.getElementsByClassName('colors');
+      const colorTabClassList = colorTab[0].classList;
+      const colorPaletteVisible = colorTabClassList.contains('d-block');
 
-      if (colorTab[0].classList.contains('d-block')) {
-        colorTab[0].classList.remove('d-block');
+      if (colorPaletteVisible) {
+        colorTabClassList.remove('d-block');
       } else {
-        colorTab[0].classList.add('d-block');
+        colorTabClassList.add('d-block');
       }
 
     },
